@@ -33,6 +33,7 @@
         <h2><%= file.data.file %></h2>
         <h3>By: <%= file.data.user %></h3>
         <a href="/file/<%= file.data.id %>/download" class="btn btn-primary">Download</a>
+        <a href="/files/<%= file.data.id %>/<%= file.data.file %>" class="btn btn-primary">Raw</a>
         <br><br>
         <% if (file.data.content_type.startsWith("image/")) { %>
             <img src="/files/<%= file.data.id %>/<%= file.data.file %>" width="256" height="256">

@@ -137,15 +137,15 @@ app.post("/api/uploadfile", (req, res) => {
             return;
         });
 
-        connection.createDoc("files", id, {
+        connection.createDocSync("files", id, {
             id: id,
             user: userCookie.username,
             file: files.file.originalFilename,
             content_type: files.file.mimetype
+        }).then(() => {
+            return res.redirect("/file/" + id);
         });
     });
-    
-    return res.redirect("/file/" + id);
 });
 
 app.listen(port);

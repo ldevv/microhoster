@@ -104,9 +104,7 @@ dist
 .tern-port
 
 # Database
-
 DDBW_Data/
 
-# Files
-
+# Uploaded Files
 public/files/

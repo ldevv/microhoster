@@ -140,7 +140,8 @@ app.post("/api/uploadfile", (req, res) => {
         connection.createDoc("files", id, {
             id: id,
             user: userCookie.username,
-            file: files.file.originalFilename
+            file: files.file.originalFilename,
+            content_type: files.file.mimetype
         });
     });
     

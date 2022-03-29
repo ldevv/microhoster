@@ -102,3 +102,11 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Database
+
+DDBW_Data/
+
+# Files
+
+public/files/

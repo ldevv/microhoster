@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MicroHoster • <%= file.data.file %></title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="icon" href="/images/chef_hat.png">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">
+                    <img src="/images/chef_hat.png" width="30" height="27" class="d-inline-block align-text-top">
+                    MicroHoster
+                </a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                    </ul>
+                </div>
+                <form class="d-flex">
+                    <% if (!username || username == null) { %>
+                        <a class="btn btn-outline-primary mx-3" href="/signin">Sign In</a>
+                        <a class="btn btn-outline-primary" href="/signup">Sign Up</a>
+                    <% } %>
+                </form>
+            </div>
+        </nav>
+        <div class="row" style="margin: auto; padding: 10px;">
+            <div class="col-sm-2">
+                <div class="card border-info mb-3" style="width: 18rem;">
+                    <div class="card-body">
+                        <img class="card-img-top" src="/files/<%= file.data.id %>/<%= file.data.file %>" width="512" height="256" alt="Card image cap">
+                        <h5 class="card-title"><%= file.data.file %></h5>
+                        <h6 class="card-subtitle mb-2 text-muted">By: <%= file.data.user %></h6>
+                        <a href="/file/<%= file.data.id %>/download" class="btn btn-primary">Download</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    </body>
+</html>
